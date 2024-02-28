@@ -5,8 +5,7 @@ import { GifItem } from "./GifItem";
 import PropTypes from 'prop-types';
 
 export const GifGrid = ({ category }) => {
-
-  const [images, setImages] = useState([])
+  const [images, setImages] = useState([]);
   const getImages = async () => {
     const newImages = await getGifs(category);
     setImages(newImages);
@@ -14,9 +13,8 @@ export const GifGrid = ({ category }) => {
 
   useEffect(() => {
     getImages();
-  }, [])
-  
-  
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>
